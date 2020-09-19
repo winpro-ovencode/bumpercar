@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 968e8c8508e0bf947a943cd6f0ede8a8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Tofino Pro Personal
+  fontNames:
+  - Tofino Pro Personal
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 54b7c14978ef0ba4a9e227bcc359f516, type: 3}
+  - {fileID: 12800000, guid: 42bae47e9a0380c4ab46d28b7b47b83b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
