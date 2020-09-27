@@ -63,13 +63,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Game\Scripts\CameraManager.cs" />
-    <Compile Include="Assets\Game\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Game\Scripts\ItemInfo.cs" />
     <Compile Include="Assets\Game\Scripts\MyPlayer.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Game\Scripts\UI\Joystick.cs" />
     <Compile Include="Assets\Game\Scripts\UI\UILobby.cs" />
-    <Compile Include="Assets\Mybumpercar.cs" />
     <Compile Include="Assets\UIGradient\Scripts\UIGradient.cs" />
     <Compile Include="Assets\UIGradient\Scripts\Vector2Extension.cs" />
     <Reference Include="UnityEngine">
