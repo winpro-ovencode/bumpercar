@@ -12,6 +12,8 @@ public class SwipeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        scroll_pos = scrollbar.GetComponent<Scrollbar>().value;
+        Debug.Log(scroll_pos);
         pos = new float[transform.childCount];
         float distance = 1f / (pos.Length - 1f);
         for (int i = 0; i < pos.Length; i++)
@@ -30,7 +32,7 @@ public class SwipeMenu : MonoBehaviour
                 if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
                 {
                     scrollbar.GetComponent<Scrollbar>().value = Mathf.Lerp(scrollbar.GetComponent<Scrollbar>().value, pos[i], 0.1f);
-                }
+                }   
             }
         }
 
@@ -39,13 +41,13 @@ public class SwipeMenu : MonoBehaviour
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
-                Debug.LogWarning("Current Selected Level" + i);
-                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
+                //Debug.LogWarning("Current Selected Level" + i);
+                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(3.5f, 3.5f), 3.5f);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
                     {
-                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(2f, 2f), 2f);
                     }
                 }
             }
