@@ -37,21 +37,21 @@ public class SwipeMenu : MonoBehaviour
         }
 
 
-        for (int i = 0; i < pos.Length; i++)
-        {
-            if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
-            {
-                //Debug.LogWarning("Current Selected Level" + i);
-                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(3.5f, 3.5f), 3.5f);
-                for (int j = 0; j < pos.Length; j++)
-                {
-                    if (j != i)
-                    {
-                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(2f, 2f), 2f);
-                    }
-                }
-            }
-        }
+        //for (int i = 0; i < pos.Length; i++)
+        //{
+        //    if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
+        //    {
+        //        //Debug.LogWarning("Current Selected Level" + i);
+        //        transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(3.5f, 3.5f), 3.5f);
+        //        for (int j = 0; j < pos.Length; j++)
+        //        {
+        //            if (j != i)
+        //            {
+        //                transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(2f, 2f), 2f);
+        //            }
+        //        }
+        //    }
+        //}
 
     }
 }
