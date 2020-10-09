@@ -27,7 +27,7 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
-        Init_CameraPos = new Vector3(0, 30.9f, - 16.32f);
+        Init_CameraPos = new Vector3(-17, 35.5f, -18f);
     }
 
     private void Update()
