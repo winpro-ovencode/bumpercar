@@ -38,7 +38,7 @@ public class MyPlayer : MonoBehaviour
 
     public Transform StTr;
     public float curSt = 0;
-    public float maxSt = 50;
+    public float maxSt = 250;
 
     float angle = 0f;    
     int sign = 0;
@@ -63,19 +63,35 @@ public class MyPlayer : MonoBehaviour
         StartCoroutine("CoRecoveryEnergy");
     }
 
+    public void DropSt() {
+        curSt--;
+        if (curSt <= 0)
+        {
+            _accSpeed = 1f;
+        }
+        SetStUI();
+    }
+
+    public void SetAcc(float _accSpeed) {
+        this._accSpeed = _accSpeed;
+        Debug.Log(_accSpeed);
+    }
 
     void Update()
     {
         // MyBumpercarTr.localPosition = Vector3.zero;
         _MyDirection = MyDirectionTr.position - transform.position;
-
+        if (_accSpeed > 1)
+        {
+            DropSt();
+        }
         if (Virtual_Joystick.IsDrag)
         {
             angle = Vector3.Angle(_MyDirection, new Vector3(Virtual_Joystick.Dir.x, 0, Virtual_Joystick.Dir.y));
             sign = (Vector3.Cross(_MyDirection, new Vector3(Virtual_Joystick.Dir.x, 0, Virtual_Joystick.Dir.y)).y > 0) ? 1 : -1;
             transform.Rotate(0, sign * angle * _rot_speed * Time.deltaTime, 0);
             //Debug.Log(Vector3.Angle(Vector3.forward, _MyDirection));
-            _accSpeed = Virtual_Joystick.accSpeed;
+            // _accSpeed = Virtual_Joystick.accSpeed;
         }
         transform.position += (_MyDirection) * _speed * Time.deltaTime * _accSpeed;
     }

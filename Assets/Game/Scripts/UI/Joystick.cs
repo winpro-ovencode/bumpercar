@@ -31,6 +31,7 @@ public class Joystick : MonoBehaviour
     public GameObject Handle;
     public Vector3 Dir;
     public bool IsDrag;
+    public bool IsAcc;
     public float radius;
     private float radius_initTemp;
 
@@ -41,7 +42,13 @@ public class Joystick : MonoBehaviour
     private void Awake()
     {
         radius_initTemp = radius;
-        accSpeed = 1f;
+
+        //accSpeed = 1f;
+        MyPlayer.Instance.SetAcc(1f);
+
+        accSpeed_initMax = 2f;
+
+        IsAcc = false;
     }
 
     public void MouseDown(BaseEventData _data)
@@ -61,36 +68,62 @@ public class Joystick : MonoBehaviour
         Vector3 dir = inputPos - transform.position;
         dir.z = 0;
         float fingerRad = dir.magnitude;
-
         Dir = dir.normalized;
 
         if (MyPlayer.Instance.StTr.localScale.x == 1 && fingerRad > radius)
         {
-            radius = radius_initTemp * accSpeed_initMax;
+            //radius = radius_initTemp * accSpeed_initMax;
+            radius = radius_initTemp * 2;
+            IsAcc = true;
+        }
+
+        //if (fingerRad > radius && radius > radius_initTemp)
+        //{
+        //    accSpeed = accSpeed_initMax * (Mathf.Clamp((fingerRad - radius), (fingerRad - radius), radius) / (radius - radius_initTemp));
+        //}
+
+        if (fingerRad < radius)
+        {
+            radius = radius_initTemp;
+            IsAcc = false;
+        }
+        else if (radius > radius_initTemp)
+        {
+            accSpeed = accSpeed_initMax * (Mathf.Clamp((fingerRad - radius), (fingerRad - radius), radius) / (radius - radius_initTemp));
+        }
+
+        if (IsAcc)
+        {
+            MyPlayer.Instance.StopCoroutine("CoRecoveryEnergy");
+            // MyPlayer.Instance.DropSt();
+
+            if (MyPlayer.Instance.curSt <= 0)
+            {
+                MyPlayer.Instance.SetAcc(1f);
+                //MyPlayer.Instance.StartCoroutine("CoRecoveryEnergy");
+                IsAcc = false;
+            }
+
+            MyPlayer.Instance.SetAcc(Mathf.Lerp(1, accSpeed, 0.2f));
+            Debug.Log(accSpeed);
         }
         else
         {
             radius = radius_initTemp;
-        }
-
-        if (fingerRad < radius)
-        {
-            accSpeed = 1f;
-        }
-        else
-        {
-            accSpeed = 2f;
-            MyPlayer.Instance.curSt--;
+            MyPlayer.Instance.StartCoroutine("CoRecoveryEnergy");
+            MyPlayer.Instance.SetAcc(1f);
         }
 
         Handle.transform.position = transform.position + Dir * Mathf.Min(fingerRad, radius);
-
     }
 
     public void MouseUp(BaseEventData _data)
     {
-        accSpeed = 1f;
-        IsDrag = false;        
+        //accSpeed = 1f;
+        MyPlayer.Instance.StartCoroutine("CoRecoveryEnergy");
+        MyPlayer.Instance.SetAcc(1f);
+        IsDrag = false;
+        IsAcc = false;
         gameObject.SetActive(false);
         //setAccel(1f);
     }

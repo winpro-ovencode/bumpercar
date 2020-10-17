@@ -700,6 +700,7 @@ MonoBehaviour:
   Handle: {fileID: 1308587745}
   Dir: {x: 0, y: 0, z: 0}
   IsDrag: 0
+  IsAcc: 0
   radius: 80
   accSpeed: 1
   accSpeed_initMax: 0
@@ -795,7 +796,7 @@ MonoBehaviour:
   maxHp: 1000
   StTr: {fileID: 699919448}
   curSt: 0
-  maxSt: 50
+  maxSt: 250
 --- !u!1 &234487411
 GameObject:
   m_ObjectHideFlags: 0
