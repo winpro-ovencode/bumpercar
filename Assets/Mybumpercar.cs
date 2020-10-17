@@ -9,6 +9,8 @@ public class Mybumpercar : MonoBehaviour
     float item_2_f;
     float item_3_f;
 
+    float crashPower;
+
     public Text item_1_txt;
     public Text item_2_txt;
     public Text item_3_txt;
@@ -18,6 +20,7 @@ public class Mybumpercar : MonoBehaviour
     private void Start()
     {
         SetItemUI();
+        crashPower = 500f;
     }
 
     private void OnTriggerEnter(Collider col)
@@ -44,20 +47,22 @@ public class Mybumpercar : MonoBehaviour
         //if (col.gameObject.CompareTag(GameObjType.Enemy.ToString()))
         if (col.gameObject.CompareTag("Enemy"))
         {
-            CameraManager.Instance.ShakeCamera();
+            //CameraManager.Instance.ShakeCamera();
+            Rigidbody rb = col.gameObject.GetComponent<Rigidbody>();
+            rb.AddForce(crashPower * (col.transform.position - transform.position).normalized);
         }
-        SetMyPlalyerPos();
+        // SetMyPlalyerPos();
     }
 
-    private void OnCollisionExit(Collision col)
-    {
-        SetMyPlalyerPos();
-    }
+    //private void OnCollisionExit(Collision col)
+    //{
+    //    // SetMyPlalyerPos();
+    //}
 
-    private void SetMyPlalyerPos() {
-        MyPlayerTr.position = new Vector3(transform.position.x, 0, transform.position.z);
-        transform.localPosition = Vector3.zero;
-    }
+    //private void SetMyPlalyerPos() {
+    //    MyPlayerTr.position = new Vector3(transform.position.x, 0, transform.position.z);
+    //    transform.localPosition = Vector3.zero;
+    //}
 
     void SetItemUI()
     {

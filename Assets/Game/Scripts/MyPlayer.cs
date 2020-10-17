@@ -5,7 +5,23 @@ using UnityEngine;
 
 public class MyPlayer : MonoBehaviour
 {
+    private static MyPlayer instance;
+    public static MyPlayer Instance {
+        get
+        {
+            //if (instance == null)
+            //{
+            //    instance = GameObject.FindObjectOfType<MyPlayer>(); ;
+            //}
+            //if (instance == null)
+            //{
+            //    Debug.LogError("Can't find MyPlayer in Game Scene");
+            //}
+            return instance;
+        }
+    }
     public Joystick Virtual_Joystick;
+
     //public PlayerController PC;
     public Transform MyDirectionTr;
     public Transform MyBumpercarTr;
@@ -14,6 +30,7 @@ public class MyPlayer : MonoBehaviour
     Vector3 _MyDirection;
     public float _speed = 3f;
     public float _rot_speed = 1f;
+    private float _accSpeed = 1f;
 
     public Transform HpTr;
     public float curHp = 1000;
@@ -25,6 +42,17 @@ public class MyPlayer : MonoBehaviour
 
     float angle = 0f;    
     int sign = 0;
+
+    private void Init()
+    {
+        instance = this;
+    }
+
+    private void Awake()
+    {
+        Init();
+        Virtual_Joystick.accSpeed_initMax = 2;
+    }
 
     private void Start()
     {
@@ -39,11 +67,6 @@ public class MyPlayer : MonoBehaviour
     void Update()
     {
         // MyBumpercarTr.localPosition = Vector3.zero;
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AccBumperCar();
-        }
-
         _MyDirection = MyDirectionTr.position - transform.position;
 
         if (Virtual_Joystick.IsDrag)
@@ -52,8 +75,9 @@ public class MyPlayer : MonoBehaviour
             sign = (Vector3.Cross(_MyDirection, new Vector3(Virtual_Joystick.Dir.x, 0, Virtual_Joystick.Dir.y)).y > 0) ? 1 : -1;
             transform.Rotate(0, sign * angle * _rot_speed * Time.deltaTime, 0);
             //Debug.Log(Vector3.Angle(Vector3.forward, _MyDirection));
+            _accSpeed = Virtual_Joystick.accSpeed;
         }
-        transform.position += (_MyDirection) * _speed * Time.deltaTime;
+        transform.position += (_MyDirection) * _speed * Time.deltaTime * _accSpeed;
     }
 
     //IEnumerator CoRecoveryEnergy(float _recoveryTime) {
@@ -86,9 +110,8 @@ public class MyPlayer : MonoBehaviour
         StTr.localScale = new Vector3(curSt / maxSt, 1, 1);
     }
 
-    public void AccBumperCar() {
-        _speed = 6;
-        Debug.Log("Ddd");
+    void OnDestroy()
+    {
+        instance = null;
     }
-
 }

@@ -700,7 +700,9 @@ MonoBehaviour:
   Handle: {fileID: 1308587745}
   Dir: {x: 0, y: 0, z: 0}
   IsDrag: 0
-  radius: 50
+  radius: 80
+  accSpeed: 1
+  accSpeed_initMax: 0
 --- !u!114 &218249408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1765,7 +1767,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!65 &710732978
 BoxCollider:

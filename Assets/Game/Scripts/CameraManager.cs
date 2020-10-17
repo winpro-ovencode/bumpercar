@@ -40,9 +40,9 @@ public class CameraManager : MonoBehaviour
         MainCameraPos.position = vec;
     }
 
-    public void ShakeCamera() {
-        StartCoroutine(CO_ShackCamera());
-    }
+    //public void ShakeCamera() {
+    //   StartCoroutine(CO_ShackCamera());
+    //}
 
 
     IEnumerator CO_ShackCamera()
