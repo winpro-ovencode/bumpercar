@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: c7cf6bdf98064044c9319c9a0ed83757
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: back-rack
+    100002: //RootNode
+    100004: door-left
+    100006: door-right
+    100008: exhaust
+    100010: front-bumper
+    100012: hood
+    100014: pickup-body
+    100016: rear-bumper
+    100018: trunk-door
+    100020: wheels-frame
+    400000: back-rack
+    400002: //RootNode
+    400004: door-left
+    400006: door-right
+    400008: exhaust
+    400010: front-bumper
+    400012: hood
+    400014: pickup-body
+    400016: rear-bumper
+    400018: trunk-door
+    400020: wheels-frame
+    2100000: car-glass
+    2100002: car-paint
+    2100004: car-metal
+    2100006: car-opaque
+    2100008: bumper-front
+    2100010: bumper-back
+    2100012: rack-metal
+    2100014: rack-light-body
+    2100016: rack-light-surface
+    2100018: exhaust
+    2100020: trunk-door
+    2100022: hood
+    2100024: wheels-frame
+    2100026: door
+    2100028: door-glass
+    2300000: back-rack
+    2300002: door-left
+    2300004: door-right
+    2300006: exhaust
+    2300008: front-bumper
+    2300010: hood
+    2300012: pickup-body
+    2300014: rear-bumper
+    2300016: trunk-door
+    2300018: wheels-frame
+    3300000: back-rack
+    3300002: door-left
+    3300004: door-right
+    3300006: exhaust
+    3300008: front-bumper
+    3300010: hood
+    3300012: pickup-body
+    3300014: rear-bumper
+    3300016: trunk-door
+    3300018: wheels-frame
+    4300000: pickup-body
+    4300002: front-bumper
+    4300004: rear-bumper
+    4300006: back-rack
+    4300008: exhaust
+    4300010: trunk-door
+    4300012: hood
+    4300014: wheels-frame
+    4300016: door-left
+    4300018: door-right
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bumper-back
+    second: {fileID: 2100000, guid: 6c588e715be197343b7aa4fdc3ed6037, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bumper-front
+    second: {fileID: 2100000, guid: 8be6a24889faa364ba240a80aad3e380, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car-glass
+    second: {fileID: 2100000, guid: 5265b4066d8cf1a4f9f1d06a0d8f38a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car-metal
+    second: {fileID: 2100000, guid: 1a27503fa9e09e74e8badb89364323b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car-opaque
+    second: {fileID: 2100000, guid: 4b04a5093923c9f4e931fcdd7af2a100, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car-paint
+    second: {fileID: 2100000, guid: 2257e680080e7bb4eb55aadfdae6efa2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door
+    second: {fileID: 2100000, guid: ab0e4864093706e4d9af968ba47283b6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door-glass
+    second: {fileID: 2100000, guid: 7a379e651be3763448c7aa3e48bd6155, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: exhaust
+    second: {fileID: 2100000, guid: 58b29cb21e2c17141b09d31a8eae8a55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hood
+    second: {fileID: 2100000, guid: d53be3458c55a4146a02703f0b48c892, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rack-light-body
+    second: {fileID: 2100000, guid: 542d51dee78641a469899d9bfd49734d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rack-light-surface
+    second: {fileID: 2100000, guid: 4e7997da5ab1b274695d5486fb433884, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rack-metal
+    second: {fileID: 2100000, guid: d0e0deed522987b47b3cd6028a3c4f22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trunk-door
+    second: {fileID: 2100000, guid: 3a6b8c33f958e5645bb72a3c024022f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheels-frame
+    second: {fileID: 2100000, guid: 1fe5bf9da3dd4c245bbc201c45bc3877, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
