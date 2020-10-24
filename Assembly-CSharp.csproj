@@ -63,16 +63,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarCamera.cs" />
+    <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarController.cs" />
+    <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarPlayer.cs" />
+    <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarSurface.cs" />
+    <Compile Include="Assets\DavidJalbert\TinyCarController\Examples\Scripts\TinyCarExampleText.cs" />
     <Compile Include="Assets\Game\Scripts\CameraManager.cs" />
     <Compile Include="Assets\Game\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Game\Scripts\Inven\ArrangeSlot.cs" />
+    <Compile Include="Assets\Game\Scripts\Inven\Slot.cs" />
     <Compile Include="Assets\Game\Scripts\ItemInfo.cs" />
     <Compile Include="Assets\Game\Scripts\MyPlayer.cs" />
+    <Compile Include="Assets\Game\Scripts\ObjectRotation.cs" />
     <Compile Include="Assets\Game\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Game\Scripts\SwipeMenu.cs" />
     <Compile Include="Assets\Game\Scripts\UI\Joystick.cs" />
     <Compile Include="Assets\Game\Scripts\UI\UILobby.cs" />
     <Compile Include="Assets\Mybumpercar.cs" />
     <Compile Include="Assets\UIGradient\Scripts\UIGradient.cs" />
     <Compile Include="Assets\UIGradient\Scripts\Vector2Extension.cs" />
+    <None Include="Assets\DavidJalbert\TinyCarController\readme.txt" />
+    <None Include="Assets\DavidJalbert\TinyCarController\license.txt" />
     <None Include="Assets\PolygonCity\Change_Log.txt" />
     <Reference Include="UnityEngine">
       <HintPath>/Applications/Unity/Hub/Editor/2019.4.10f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
