@@ -16,7 +16,7 @@ public class Slot : MonoBehaviour
     }
     public void OnClick()
     { 
-        Debug.Log("clicked");
+        Debug.Log("clicked" + index);
         panelState = !panelState;
         SlotPanel.SetActive(panelState);
     }

@@ -5,17 +5,26 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
+    private List<Item> itemList= new List<Item>();
+    
     enum ItemType {UP,DOWN,SIDE};
 
-    struct Item
+    public struct Item
     {
         Sprite itemImg;
         Sprite bgImg;
         int id;
+        ItemType itemType;
     }
 
-    void OnClickItem()
+    public void AddItem(Item item)
     {
-
+        itemList.Add(item);
     }
+
+    public void Clear()
+    {
+        itemList.Clear();
+    }
+   
 }
