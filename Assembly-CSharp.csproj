@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BBlock\@Resources\SampleScene\@SampleScene\@Script\FlyCamera.cs" />
     <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarCamera.cs" />
     <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarController.cs" />
     <Compile Include="Assets\DavidJalbert\TinyCarController\Components\TinyCarPlayer.cs" />
@@ -83,10 +82,8 @@
     <Compile Include="Assets\Mybumpercar.cs" />
     <Compile Include="Assets\UIGradient\Scripts\UIGradient.cs" />
     <Compile Include="Assets\UIGradient\Scripts\Vector2Extension.cs" />
-    <None Include="Assets\BBlock\Prefabs\@FBX\Readme.txt" />
     <None Include="Assets\DavidJalbert\TinyCarController\readme.txt" />
     <None Include="Assets\Mobile_PostProcessing Profiles\ReadmeFIRST!.txt" />
-    <None Include="Assets\BBlock\@Resources\PatchNoteV1.1.txt" />
     <None Include="Assets\DavidJalbert\TinyCarController\license.txt" />
     <None Include="Assets\PolygonCity\Change_Log.txt" />
     <Reference Include="UnityEngine">
