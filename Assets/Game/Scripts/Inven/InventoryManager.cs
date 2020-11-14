@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public enum ItemType { UP, DOWN, SIDE };
 
+public struct receipe
+{
+
+}
+
 public struct Item
 {
     public int Index;
@@ -12,11 +17,13 @@ public struct Item
     public Sprite Image;
 }
 
-public class Inventory : MonoBehaviour
+public class InventoryManager : MonoBehaviour
 {
     public GameObject ScrollViewContent;
     public GameObject Slot;
     public GameObject MakePanel;
+    public MakePanelManager makePanelManager;
+
 
     public List<Slot> slotList = new List<Slot>();
     public List<Item> itemList = new List<Item>();
@@ -34,23 +41,33 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < rowNum * col; i++)
         {
             GameObject slotObj = Instantiate(Slot);
-            slotObj.transform.parent = ScrollViewContent.transform;
+            slotObj.transform.SetParent(ScrollViewContent.transform);
             Slot slot = slotObj.GetComponent<Slot>();
             slot.EnrollInventory(this);
             slot.SetIndex(i);
             slotList.Add(slot);
         }
-
     }
-    public void OpenSlotPanel(int index)
+
+    public void OpenSlotPanel(int index) //Slot에서 index를 가지고 호출함
     {
-        for(int i=0; i<slotList.Count;i++)
+        for(int i=0; i < slotList.Count; i++)
+        {
+            Debug.Log(i == index);
             slotList[i].OpenPanel(i == index);
-        
+        }
     }
 
     public void OpenMakePanel(int index)
     {
-        MakePanel.SetActive(true);
+        MakePanelInfo makePanelInfo = new MakePanelInfo() { //개체 이니셜라이저
+            title = "가시범퍼",
+            level = 3,
+            description = "공격력 3%향상",
+            count = new int[] { 1, 2, 3 }
+        };
+        makePanelManager.OpenPanel(makePanelInfo);
     }
+
+ 
 }

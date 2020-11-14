@@ -6,7 +6,7 @@ using UnityEngine;
 public class ArrangeSlot : MonoBehaviour
 {
     public GameObject Slot;
-    public Inventory inventory;
+    public InventoryManager inventory;
     public int row=5;
 
     // Start is called before the first frame update

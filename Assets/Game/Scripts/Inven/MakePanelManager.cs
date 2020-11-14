@@ -5,40 +5,52 @@ using UnityEngine.UI;
 
 public struct MakePanelInfo
 {
-    public string name;
+    public string title;
     public int level;
     public string description;
-    public Part[] parts;
+    public int[] count;
 }
 
-public struct Part
+public class Part
 {
-    Sprite bgImg;
-    Sprite itemImg;
-    int count;
+    public Sprite bgImg;
+    public Sprite itemImg;
+    public int count;
+}
+
+[System.Serializable]
+public class MakePanelUI
+{
+    public Text title;
+    public Text level;
+    public Text description;
+    public Text count1;
+    public Text count2;
+    public Text count3;
 }
 
 public class MakePanelManager : MonoBehaviour
 {
-    private MakePanelInfo makePanelInfo;
     public GameObject MakePanel;
+    public MakePanelUI makePanelUI;
+    private MakePanelInfo makePanelInfo;
 
-    void OpenPanel(MakePanelInfo panelInfo)
+    public void OpenPanel(MakePanelInfo panelInfo)
     {
+        Debug.Log(panelInfo);
         makePanelInfo = panelInfo;
+        PrintUI(makePanelInfo);
+        MakePanel.SetActive(true);
     }
-
-    // Start is called before the first frame update
-    void Start()
+    public void PrintUI(MakePanelInfo panelInfo) {
+        makePanelUI.title.text = panelInfo.title;
+        makePanelUI.level.text = "LV"+ panelInfo.level.ToString();
+        makePanelUI.description.text =  panelInfo.description.ToString();
+        makePanelUI.count1.text = panelInfo.count[0].ToString();
+        makePanelUI.count2.text = panelInfo.count[1].ToString();
+        makePanelUI.count3.text = panelInfo.count[2].ToString();
+    }
+    public void Start()
     {
-        
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 }
