@@ -283,7 +283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPanel: {fileID: 0}
-  itemImg: {fileID: 0}
   bgImg: {fileID: 0}
 --- !u!1 &121027657
 GameObject:
@@ -418,7 +417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPanel: {fileID: 0}
-  itemImg: {fileID: 0}
   bgImg: {fileID: 0}
 --- !u!1 &235826875
 GameObject:
@@ -921,6 +919,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &541139943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541139945}
+  - component: {fileID: 541139944}
+  m_Layer: 0
+  m_Name: EquipManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &541139944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541139943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5725df75f91c740ba17b1f863d1f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipPanelUI:
+    left: {fileID: 2048679708}
+    right: {fileID: 235826878}
+    top: {fileID: 663873231}
+    bottom: {fileID: 1150650081}
+--- !u!4 &541139945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541139943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 155.89803, y: 1015.0953, z: -1.5969849}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641568824
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +1018,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPanel: {fileID: 0}
-  itemImg: {fileID: 0}
   bgImg: {fileID: 0}
 --- !u!1 &663873228
 GameObject:
@@ -1493,7 +1538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &859054731
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2242,7 +2287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPanel: {fileID: 0}
-  itemImg: {fileID: 0}
   bgImg: {fileID: 0}
 --- !u!1 &1445083407
 GameObject:
@@ -2515,7 +2559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlotPanel: {fileID: 0}
-  itemImg: {fileID: 0}
   bgImg: {fileID: 0}
 --- !u!1 &1564577370
 GameObject:
@@ -3243,6 +3286,7 @@ MonoBehaviour:
   Slot: {fileID: 182041206136715022, guid: 7f4df150cff2bc04abaea7d97a38caea, type: 3}
   MakePanel: {fileID: 859054730}
   makePanelManager: {fileID: 1154178521}
+  equipManager: {fileID: 541139944}
   slotList: []
   rowNum: 5
 --- !u!4 &2026728603

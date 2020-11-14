@@ -3,21 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public struct MakePanelInfo
-{
-    public string title;
-    public int level;
-    public string description;
-    public int[] count;
-}
-
-public class Part
-{
-    public Sprite bgImg;
-    public Sprite itemImg;
-    public int count;
-}
-
 [System.Serializable]
 public class MakePanelUI
 {
@@ -27,6 +12,14 @@ public class MakePanelUI
     public Text count1;
     public Text count2;
     public Text count3;
+}
+
+public struct MakePanelInfo
+{
+    public string title;
+    public int level;
+    public string description;
+    public int[] count;
 }
 
 public class MakePanelManager : MonoBehaviour

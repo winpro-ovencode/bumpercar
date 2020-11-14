@@ -2,28 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
+[System.Serializable]
+public class EquipPanelUI
+{
+    public Image left;
+    public Image right;
+    public Image top;
+    public Image bottom;
+}
+
 public class EquipManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class MakePanelUI
-    {
-        public Sprite left;
-        public Sprite right;
-        public Sprite top;
-        public Sprite bottom;
-    }
+    public EquipPanelUI equipPanelUI;
 
-    public struct EquipmentPanelInfo
-    {
-        Image itemImg;
-    }
 
-    public void changeItem(Item item)
+    public void ChangeItem(Item item)
     {
-
-        if(item.itemType == ItemType.DOWN) { }
-        if (item.itemType == ItemType.UP) { }
-        if (item.itemType == ItemType.SIDE) { }
+        if (item.itemType == ItemType.BOTTOM)
+            equipPanelUI.bottom.sprite = item.image;
+        if (item.itemType == ItemType.TOP) 
+            equipPanelUI.top.sprite = item.image;
+        if (item.itemType == ItemType.SIDE){
+            equipPanelUI.left.sprite = item.image;
+            equipPanelUI.right.sprite = item.image;
+        }
 
     }
 }

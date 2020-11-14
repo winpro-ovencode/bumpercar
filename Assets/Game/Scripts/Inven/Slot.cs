@@ -7,7 +7,6 @@ public class Slot : MonoBehaviour
 {
     private InventoryManager inventoryManager;
     public GameObject SlotPanel;
-    public Sprite itemImg;
     public Sprite bgImg;
     bool panelState = false;
     private int index;
@@ -36,7 +35,9 @@ public class Slot : MonoBehaviour
 
     public void Equip()
     {
+        Debug.Log(index);
         Debug.Log("장비 착용");
+        inventoryManager.Equip(index);
     }
 
 }

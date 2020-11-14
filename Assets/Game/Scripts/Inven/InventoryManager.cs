@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum ItemType { UP, DOWN, SIDE };
+public enum ItemType { TOP, BOTTOM, SIDE };
 
 public struct receipe
 {
@@ -14,7 +14,7 @@ public struct Item
 {
     public int Index;
     public ItemType itemType;
-    public Sprite Image;
+    public Sprite image;
 }
 
 public class InventoryManager : MonoBehaviour
@@ -23,7 +23,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject Slot;
     public GameObject MakePanel;
     public MakePanelManager makePanelManager;
-
+    public EquipManager equipManager;
 
     public List<Slot> slotList = new List<Slot>();
     public List<Item> itemList = new List<Item>();
@@ -69,5 +69,17 @@ public class InventoryManager : MonoBehaviour
         makePanelManager.OpenPanel(makePanelInfo);
     }
 
- 
+    public void Equip(int index)
+    {
+        Image image = slotList[0].gameObject.transform.Find("ItemImg").GetComponent<Image>();
+        Item item = new Item() {
+            Index = index,
+            itemType = ItemType.TOP,
+            image = image.sprite,
+        };
+        
+        //equipManager.ChangeItem(itemList[index]);
+        equipManager.ChangeItem(item);
+    }
+
 }
