@@ -27,6 +27,7 @@ public class Slot : MonoBehaviour
     }
     public void OpenPanel(bool state)  //Make, Equip 버튼 패널 열기, Slot 프리팹 하위에 있음
     {
+        Debug.Log(state);
         SlotPanel.SetActive(state);
     }
     public void OnMakePanelClick() { // Make 패널 열기
