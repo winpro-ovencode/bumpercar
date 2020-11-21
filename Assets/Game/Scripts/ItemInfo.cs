@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ItemType
+namespace BumperCar
 {
-    Item_1,
-    Item_2,
-    Item_3
-}
-
-public class ItemInfo : MonoBehaviour
-{
-    public ItemType ItemType;
-
-    void Start()
+    public enum ItemType
     {
-        // ItemType = ItemType.Item_1;
+        Item_1,
+        Item_2,
+        Item_3
     }
 
+    public class ItemInfo : MonoBehaviour
+    {
+        public ItemType ItemType;
 
+        void Start()
+        {
+            // ItemType = ItemType.Item_1;
+        }
+
+
+    }
 }
