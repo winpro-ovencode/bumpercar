@@ -87,9 +87,13 @@ public class MyPlayer : MonoBehaviour
         }
         if (Virtual_Joystick.IsDrag)
         {
-            angle = Vector3.Angle(_MyDirection, new Vector3(Virtual_Joystick.Dir.x, 0, Virtual_Joystick.Dir.y));
-            sign = (Vector3.Cross(_MyDirection, new Vector3(Virtual_Joystick.Dir.x, 0, Virtual_Joystick.Dir.y)).y > 0) ? 1 : -1;
-            transform.Rotate(0, sign * angle * _rot_speed * Time.deltaTime, 0);
+            float heading = Mathf.Atan2(Virtual_Joystick.Dir.x, Virtual_Joystick.Dir.y);
+            transform.rotation = Quaternion.Euler(0f, 0f, heading * Mathf.Deg2Rad);
+            /*var dir = Camera.main.ScreenToWorldPoint(Virtual_Joystick.Dir);
+            angle = Vector3.Angle(_MyDirection, new Vector3(dir.x, 0, dir.y));
+            sign = (Vector3.Cross(_MyDirection, new Vector3(dir.x, 0, dir.y)).y > 0) ? 1 : -1;*/
+            //transform.Rotate(0, sign * angle * _rot_speed * Time.deltaTime, 0);
+
             //Debug.Log(Vector3.Angle(Vector3.forward, _MyDirection));
             // _accSpeed = Virtual_Joystick.accSpeed;
         }
