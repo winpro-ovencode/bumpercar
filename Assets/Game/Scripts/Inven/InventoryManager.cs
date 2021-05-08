@@ -71,7 +71,7 @@ public class InventoryManager : MonoBehaviour
 
     public void Equip(int index)
     {
-        Image image = slotList[0].gameObject.transform.Find("ItemImg").GetComponent<Image>();
+        Image image = slotList[index].gameObject.transform.Find("bgImg/Canvas/ItemImg").GetComponent<Image>();
         Item item = new Item() {
             Index = index,
             itemType = ItemType.TOP,
